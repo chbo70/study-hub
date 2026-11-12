@@ -37,7 +37,11 @@ export class TaskRouter {
       combined.includes("sql") ||
       combined.includes("persistence") ||
       combined.includes("schema") ||
-      combined.includes("crud")
+      combined.includes("crud") ||
+      combined.includes("reference_tag") ||
+      combined.includes("card_type") ||
+      combined.includes("folder_id") ||
+      combined.includes("foreign key")
     ) {
       return "sqlite_persistence";
     }
@@ -47,7 +51,11 @@ export class TaskRouter {
       combined.includes("tauri") ||
       combined.includes("cargo") ||
       combined.includes("backend") ||
-      combined.includes("command")
+      combined.includes("command") ||
+      combined.includes("import_deck") ||
+      combined.includes("save_image") ||
+      combined.includes("studyhub://") ||
+      combined.includes("custom protocol")
     ) {
       return "rust_backend";
     }
@@ -58,7 +66,11 @@ export class TaskRouter {
       combined.includes("prosemirror") ||
       combined.includes("milkdown") ||
       combined.includes("preview") ||
-      combined.includes("editor")
+      combined.includes("editor") ||
+      combined.includes("remark") ||
+      combined.includes("directive") ||
+      combined.includes("split-pane") ||
+      combined.includes("cloze")
     ) {
       return "markdown_rendering";
     }
@@ -68,10 +80,16 @@ export class TaskRouter {
       combined.includes("frontend") ||
       combined.includes("react") ||
       combined.includes("sidebar") ||
+      combined.includes("file-tree") ||
+      combined.includes("drag-and-drop") ||
       combined.includes("layout") ||
       combined.includes("notion") ||
       combined.includes("css") ||
-      combined.includes("render")
+      combined.includes("render") ||
+      combined.includes("framer") ||
+      combined.includes("modal") ||
+      combined.includes("animation") ||
+      combined.includes("dashboard")
     ) {
       return "ui_rendering";
     }

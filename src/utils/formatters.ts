@@ -244,6 +244,18 @@ export function formatInterval(days: number): string {
   return months === 1 ? "1 month" : `${months} months`;
 }
 
+export function formatCardTypeLabel(cardType: string): string {
+  switch (cardType) {
+    case "single_choice":
+      return "Single Choice";
+    case "multiple_choice":
+      return "Multiple Choice";
+    case "default":
+    default:
+      return "Default (Q&A)";
+  }
+}
+
 /**
  * Formats an Anki ease factor multiplier into a readable percentage/multiplier.
  */

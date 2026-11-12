@@ -85,6 +85,10 @@ impl TaskRouter {
             || combined.contains("schema")
             || combined.contains("migration")
             || combined.contains("crud")
+            || combined.contains("reference_tag")
+            || combined.contains("card_type")
+            || combined.contains("folder_id")
+            || combined.contains("foreign key")
         {
             return TaskCategory::SqlitePersistence;
         }
@@ -95,6 +99,10 @@ impl TaskRouter {
             || combined.contains("backend")
             || combined.contains("command")
             || combined.contains("mutex")
+            || combined.contains("import_deck")
+            || combined.contains("save_image")
+            || combined.contains("studyhub://")
+            || combined.contains("custom protocol")
         {
             return TaskCategory::RustBackend;
         }
@@ -106,6 +114,10 @@ impl TaskRouter {
             || combined.contains("milkdown")
             || combined.contains("preview")
             || combined.contains("parser")
+            || combined.contains("remark")
+            || combined.contains("directive")
+            || combined.contains("split-pane")
+            || combined.contains("cloze")
         {
             return TaskCategory::MarkdownRendering;
         }
@@ -114,12 +126,19 @@ impl TaskRouter {
             || combined.contains("frontend")
             || combined.contains("react")
             || combined.contains("sidebar")
+            || combined.contains("file-tree")
+            || combined.contains("drag-and-drop")
             || combined.contains("layout")
             || combined.contains("notion")
             || combined.contains("css")
             || combined.contains("style")
             || combined.contains("component")
             || combined.contains("render")
+            || combined.contains("framer")
+            || combined.contains("modal")
+            || combined.contains("animation")
+            || combined.contains("dashboard")
+            || combined.contains("breadcrumb")
         {
             return TaskCategory::UiRendering;
         }

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "prosemirror-view/style/prosemirror.css";
 
 @layer base {
   :root {
@@ -22,73 +21,75 @@
   }
 }
 
-/* Notion-style ProseMirror Block Editor Typography */
-.prosemirror-notion-surface {
-  min-height: 300px;
-  outline: none;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #2f2e2b;
+/* Overleaf / Joplin Live Markdown Preview Typography */
+.markdown-preview-surface {
+  font-size: 0.94rem;
+  line-height: 1.72;
+  color: #292524;
+  word-wrap: break-word;
 }
 
-.prosemirror-notion-surface > * + * {
+.markdown-preview-surface.markdown-preview-compact {
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.markdown-preview-surface > * + * {
   margin-top: 0.65rem;
 }
 
-.prosemirror-notion-surface h1 {
-  font-size: 1.75rem;
+.markdown-preview-surface h1 {
+  font-size: 1.65rem;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: #1c1b18;
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
+  color: #1c1917;
+  margin-top: 1.15rem;
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #e7e5e4;
 }
 
-.prosemirror-notion-surface h2 {
-  font-size: 1.35rem;
+.markdown-preview-surface h2 {
+  font-size: 1.28rem;
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.015em;
-  color: #1c1b18;
+  color: #1c1917;
   margin-top: 1.1rem;
   margin-bottom: 0.4rem;
 }
 
-.prosemirror-notion-surface h3 {
-  font-size: 1.125rem;
+.markdown-preview-surface h3 {
+  font-size: 1.08rem;
   font-weight: 600;
   line-height: 1.4;
-  color: #2c2b28;
-  margin-top: 0.9rem;
+  color: #292524;
+  margin-top: 0.85rem;
   margin-bottom: 0.3rem;
 }
 
-.prosemirror-notion-surface p {
+.markdown-preview-surface p {
   margin: 0.35rem 0;
 }
 
-.prosemirror-notion-surface ul {
+.markdown-preview-surface ul {
   list-style-type: disc;
-  padding-left: 1.5rem;
+  padding-left: 1.45rem;
   margin: 0.4rem 0;
 }
 
-.prosemirror-notion-surface ol {
+.markdown-preview-surface ol {
   list-style-type: decimal;
-  padding-left: 1.5rem;
+  padding-left: 1.45rem;
   margin: 0.4rem 0;
 }
 
-.prosemirror-notion-surface li {
+.markdown-preview-surface li {
   margin: 0.2rem 0;
 }
 
-.prosemirror-notion-surface li > p {
-  margin: 0.1rem 0;
-}
-
-.prosemirror-notion-surface blockquote {
+.markdown-preview-surface blockquote {
   border-left: 3px solid #292524;
   background-color: #f7f7f5;
   padding: 0.6rem 1rem;
@@ -97,28 +98,28 @@
   color: #57534e;
 }
 
-.prosemirror-notion-surface code {
+.markdown-preview-surface code {
   background-color: #f3f2ef;
-  color: #c7254e;
-  padding: 0.15rem 0.35rem;
-  border-radius: 0.25rem;
+  color: #be123c;
+  padding: 0.14rem 0.36rem;
+  border-radius: 0.28rem;
   font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
     Menlo, Monaco, Consolas, monospace;
-  font-size: 0.85em;
+  font-size: 0.86em;
 }
 
-.prosemirror-notion-surface pre {
+.markdown-preview-surface pre {
   background-color: #1c1917;
   color: #f5f5f4;
-  padding: 0.9rem 1.1rem;
-  border-radius: 0.5rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.55rem;
   overflow-x: auto;
   margin: 0.75rem 0;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   line-height: 1.6;
 }
 
-.prosemirror-notion-surface pre code {
+.markdown-preview-surface pre code {
   background: transparent;
   color: inherit;
   padding: 0;
@@ -126,14 +127,33 @@
   font-size: inherit;
 }
 
-.prosemirror-notion-surface hr {
-  border: none;
-  border-top: 1px solid #e7e5e4;
-  margin: 1.25rem 0;
+.markdown-preview-surface table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
 }
 
-.prosemirror-notion-surface a {
-  color: #2563eb;
+.markdown-preview-surface th,
+.markdown-preview-surface td {
+  border: 1px solid #e7e5e4;
+  padding: 0.45rem 0.7rem;
+  text-align: left;
+}
+
+.markdown-preview-surface th {
+  background-color: #f7f7f5;
+  font-weight: 600;
+}
+
+.markdown-preview-surface hr {
+  border: none;
+  border-top: 1px solid #e7e5e4;
+  margin: 1.2rem 0;
+}
+
+.markdown-preview-surface a {
+  color: #0284c7;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
