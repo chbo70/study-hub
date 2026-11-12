@@ -44,3 +44,4 @@ jobs:
             src-tauri/target/release/bundle/msi/*.msi
             src-tauri/target/release/*.exe
           if-no-files-found: warn
+
