@@ -135,10 +135,21 @@ export class TaskRouter {
     );
     const pipeline = TaskRouter.selectPipeline(category, complexity);
 
+    const categoryLabel = {
+      ui_rendering: "UI Rendering",
+      markdown_rendering: "Markdown Rendering",
+      rust_backend: "Rust Backend",
+      sqlite_persistence: "SQLite Persistence",
+      anki_algorithm: "Anki Algorithm",
+      general: "General Task",
+    }[category];
+    const complexityLabel =
+      complexity.charAt(0).toUpperCase() + complexity.slice(1);
+
     const rationale =
       pipeline === "lightweight"
-        ? `Statically classified as ${category} (${complexity} complexity); routed to Lightweight model pipeline for UI/Markdown rendering.`
-        : `Statically classified as ${category} (${complexity} complexity); routed to Reasoning model pipeline for Rust backend, SQLite persistence, or Anki scheduling logic.`;
+        ? `Statically classified as ${categoryLabel} (${complexityLabel} complexity); routed to Lightweight model pipeline for UI/Markdown rendering.`
+        : `Statically classified as ${categoryLabel} (${complexityLabel} complexity); routed to Reasoning model pipeline for Rust backend, SQLite persistence, or Anki scheduling logic.`;
 
     return {
       task_id: task.id,

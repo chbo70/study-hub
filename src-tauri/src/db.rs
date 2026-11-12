@@ -79,7 +79,7 @@ fn seed_if_empty(conn: &Connection) -> SqlResult<()> {
         "INSERT INTO notes (title, content, created_at, updated_at) VALUES (?1, ?2, ?3, ?4)",
         params![
             "Spaced Repetition & Memory Systems",
-            "# Spaced Repetition & Memory Systems\n\nWelcome to **Study Hub** — a Notion + Anki hybrid workspace.\n\n## Core Concepts\n- **Active Recall**: Testing yourself strengthens memory traces far more effectively than passive re-reading.\n- **SM-2 Algorithm**: Calculates the optimal `next_review` date using `interval`, `ease`, and recall quality.\n- **FSRS (Free Spaced Repetition Scheduler)**: Models memory stability and retrievability.\n\n> Tip: Add flashcards directly underneath this note and switch to **Study Mode** to review due cards!",
+            "# Spaced Repetition & Memory Systems\n\nWelcome to **Study Hub** — a Notion + Anki hybrid workspace.\n\n## Core Concepts\n- **Active Recall**: Testing yourself strengthens memory traces far more effectively than passive re-reading.\n- **SM-2 Algorithm**: Calculates the optimal next review date using interval, ease factor, and recall quality.\n- **FSRS (Free Spaced Repetition Scheduler)**: Models memory stability and retrievability.\n\n> Tip: Add flashcards directly underneath this note and switch to **Study Mode** to review due cards!",
             &now,
             &now,
         ],
@@ -90,7 +90,7 @@ fn seed_if_empty(conn: &Connection) -> SqlResult<()> {
         "INSERT INTO notes (title, content, created_at, updated_at) VALUES (?1, ?2, ?3, ?4)",
         params![
             "Rust & Tauri Architecture",
-            "# Rust & Tauri Architecture\n\n## Overview\nTauri combines a lightweight **Rust** core with a system webview frontend.\n\n### Key Components\n1. `rusqlite` manages local SQLite persistence safely.\n2. `#[tauri::command]` exposes strongly-typed IPC endpoints to React/TypeScript.\n3. `TaskRouter` statically routes UI/Markdown tasks to the lightweight pipeline and Rust/SQLite/Anki tasks to the reasoning pipeline.",
+            "# Rust & Tauri Architecture\n\n## Overview\nTauri combines a lightweight **Rust** core with a system webview frontend.\n\n### Key Components\n1. **SQLite Persistence**: Manages local notes and flashcards storage safely.\n2. **Tauri IPC Commands**: Exposes strongly-typed backend endpoints to React and TypeScript.\n3. **Task Router**: Statically routes UI and Markdown tasks to the Lightweight pipeline and Rust, SQLite, and Anki tasks to the Reasoning pipeline.",
             &now,
             &now,
         ],
@@ -100,8 +100,8 @@ fn seed_if_empty(conn: &Connection) -> SqlResult<()> {
     let starter_cards = [
         (
             note1_id,
-            "What are the three primary scheduling fields in the SM-2 flashcard table?",
-            "interval (days until next review), ease (ease factor multiplier, default 2.5), and next_review (scheduled ISO date).",
+            "What are the three primary scheduling parameters in the SM-2 flashcard algorithm?",
+            "Interval (days until next review), Ease Factor (multiplier, default 2.5), and Next Review Date (scheduled review date).",
         ),
         (
             note1_id,

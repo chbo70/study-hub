@@ -186,14 +186,28 @@ impl TaskRouter {
         let complexity = Self::evaluate_complexity(category, &task.title, &task.description);
         let pipeline = Self::select_pipeline(category, complexity);
 
+        let category_label = match category {
+            TaskCategory::UiRendering => "UI Rendering",
+            TaskCategory::MarkdownRendering => "Markdown Rendering",
+            TaskCategory::RustBackend => "Rust Backend",
+            TaskCategory::SqlitePersistence => "SQLite Persistence",
+            TaskCategory::AnkiAlgorithm => "Anki Algorithm",
+            TaskCategory::General => "General Task",
+        };
+        let complexity_label = match complexity {
+            TaskComplexity::Low => "Low",
+            TaskComplexity::Medium => "Medium",
+            TaskComplexity::High => "High",
+        };
+
         let rationale = match pipeline {
             ModelPipeline::Lightweight => format!(
-                "Statically classified as {:?} ({:?} complexity); routed to Lightweight model pipeline for fast UI/Markdown rendering.",
-                category, complexity
+                "Statically classified as {} ({} complexity); routed to Lightweight model pipeline for fast UI/Markdown rendering.",
+                category_label, complexity_label
             ),
             ModelPipeline::Reasoning => format!(
-                "Statically classified as {:?} ({:?} complexity); routed to Reasoning model pipeline for backend, SQLite persistence, or Anki scheduling logic.",
-                category, complexity
+                "Statically classified as {} ({} complexity); routed to Reasoning model pipeline for backend, SQLite persistence, or Anki scheduling logic.",
+                category_label, complexity_label
             ),
         };
 

@@ -12,9 +12,15 @@
   "app": {
     "windows": [
       {
-        "title": "study-hub",
-        "width": 800,
-        "height": 600
+        "title": "Study Hub",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 800,
+        "minHeight": 600,
+        "resizable": true,
+        "maximizable": true,
+        "minimizable": true,
+        "decorations": true
       }
     ],
     "security": {
